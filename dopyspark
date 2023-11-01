@@ -1,0 +1,28 @@
+#!/bin/bash
+# Originally written by Mohammad and modified by Ciaran 
+# I used linux years ago so i was familiar with shell scripting
+
+echo "Enter 1 to start hadoop and pyspark: "
+echo "Enter 2 to list the files in hadoop ca directory: "
+echo "Enter 3 to exit: "
+
+read opt
+
+if [[ $opt -eq 1 ]]; then
+  echo "hadoop is starting. Hold Tight"
+  start-dfs.sh
+  start-yarn.sh
+  pyspark
+  echo "all up and running!"
+  
+fi
+
+if [[ $opt -eq 2 ]]; then
+  echo "this is whats in the ca folder!"
+  hadoop fs -ls /ca/
+  
+fi
+
+if [[ $opt -eq 3 ]]; then
+  echo "Thank you!"
+fi

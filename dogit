@@ -1,0 +1,31 @@
+#!/bin/bash
+# Originally written by Mohammad and modified by Ciaran to commit the gits
+# I used linux years ago so i was familiar with shell scripting
+
+echo "Enter 1 to push INTEGRATED CA files TO GIT: "
+echo "Enter 2 to do a pull from git: "
+echo "Enter 3 to exit: "
+
+read opt
+
+if [[ $opt -eq 1 ]]; then
+  echo "git is now updating. Be patient!"
+  git pull origin main
+  git add ./
+  echo "Enter commit message: "
+  read commit_message
+  git commit -m "$commit_message"
+  git push https://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@github.com/ciaranquinlan/ssbd-ca2.git main
+  echo "All gitted!"
+  
+fi
+
+if [[ $opt -eq 2 ]]; then
+  echo "Pulling. Be patient!"
+  git pull origin main
+  
+fi
+
+if [[ $opt -eq 3 ]]; then
+  echo "Thank you!"
+fi
