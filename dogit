@@ -4,7 +4,7 @@
 
 echo "Enter 1 to push INTEGRATED CA files TO GIT: "
 echo "Enter 2 to do a pull from git: "
-echo "Enter 3 to exit: "
+echo "Enter 3 to git status &  exit: "
 
 read opt
 
@@ -27,5 +27,6 @@ if [[ $opt -eq 2 ]]; then
 fi
 
 if [[ $opt -eq 3 ]]; then
+  git status
   echo "Thank you!"
 fi
