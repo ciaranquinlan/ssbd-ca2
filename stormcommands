@@ -1,2 +1,0 @@
-/home/hduser/bigdata/apache-storm-2.4.0/bin/storm jar /home/hduser/bigdata/examples/storm-example/target/storm-example-1.0-jar-with-dependencies.jar  admicloud.storm.wordcount.WordCountTopology wordCount
-
