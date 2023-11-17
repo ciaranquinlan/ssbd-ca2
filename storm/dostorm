@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "Enter 1 to start a storm : "
+echo "Enter 2 to storm status: "
+echo "Enter 3 to exit: "
+
+read opt
+
+if [[ $opt -eq 1 ]]; then
+  echo "storm is now starting. !"
+  gnome-terminal -- bash ./bin/storm nimbus
+  gnome-terminal -- bash ./bin/storm supervisor
+  gnome-terminal -- bash ./bin/storm ui
+  echo "we are Storming"
+  
+fi
+
+if [[ $opt -eq 2 ]]; then
+  echo "storm status is "
+./bin/storm list -all
+
+  
+fi
+
+if [[ $opt -eq 3 ]]; then
+  echo "Thank you!"
+fi

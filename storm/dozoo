@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo "Enter 1 to enter the zoo: "
+echo "Enter 2 to zoo status: "
+echo "Enter 3 to exit: "
+
+read opt
+
+if [[ $opt -eq 1 ]]; then
+  echo "zoo is now starting. Be patience!"
+  bin/zkServer.sh start
+  echo "All zoo and hadoop process are mentioned below"
+  jps
+fi
+
+if [[ $opt -eq 2 ]]; then
+  echo "zoo status is "
+  bin/zkServer.sh status
+  
+fi
+
+if [[ $opt -eq 3 ]]; then
+  echo "Thank you!"
+fi
