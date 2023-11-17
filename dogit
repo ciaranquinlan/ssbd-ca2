@@ -15,7 +15,7 @@ if [[ $opt -eq 1 ]]; then
   echo "Enter commit message: "
   read commit_message
   git commit -m "$commit_message"
-  git push https://github.com/ciaranquinlan/ssbd-ca2.git main
+  git push git@github.com:ciaranquinlan/ssbd-ca2.git main
   echo "All gitted!"
   
 fi
