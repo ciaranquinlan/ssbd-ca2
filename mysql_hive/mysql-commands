@@ -1,0 +1,48 @@
+create database Test;
+use Test;
+CREATE TABLE testtable (id INTEGER PRIMARY KEY,
+description VARCHAR(255));
+show tables;
+
+
+
+create database q3;
+use q3;
+
+CREATE TABLE irish_name_q3 (
+    Year INT,
+    Names VARCHAR(255),
+    Sex VARCHAR(255),
+    Count INT,
+    Ranks VARCHAR(255)
+);
+
+SHOW TABLES;
+
+SHOW VARIABLES LIKE 'secure_file_priv';
+mv the file to /var/lib/mysql-files/
+
+
+
+LOAD DATA INFILE '/var/lib/mysql-files/irish_names_q3.csv' 
+INTO TABLE irish_name_q3 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(Year, Names, Sex, @varCount, Ranks)
+SET Count = NULLIF(@varCount, '');
+
+
+DROP TABLE irish_names_q3;
+
+SELECT NOW();
+SELECT 
+    COUNT(*) AS total_rows,
+    MIN(Year) AS min_year,
+    MAX(Year) AS max_year,
+    COUNT(DISTINCT Names) AS unique_names
+FROM 
+    irish_name_q3;
+SELECT NOW();
+

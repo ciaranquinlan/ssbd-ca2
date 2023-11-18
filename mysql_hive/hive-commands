@@ -1,0 +1,32 @@
+start hadoop
+
+
+
+
+
+
+
+
+
+
+create database q3;
+use q3;
+
+CREATE TABLE irish_name_q3 (
+    Year INT,
+    Names VARCHAR(255),
+    Sex VARCHAR(255),
+    Count INT,
+    Ranks VARCHAR(255)
+);
+
+
+SHOW TABLES;
+
+
+LOAD DATA LOCAL INPATH '/home/hduser/ssbdca/ssbd-ca2/mysql_hive/irish_names_q3.csv' INTO TABLE irish_name_q3;
+
+
+
+SELECT COUNT(*) AS total_rows, MIN(Year) AS min_year, MAX(Year) AS max_year, COUNT(DISTINCT Names) AS unique_names FROM irish_name_q3;
+
