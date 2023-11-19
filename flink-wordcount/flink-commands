@@ -1,0 +1,13 @@
+cd /usr/local/flink
+./bin/start-cluster.sh 
+
+
+./bin/flink run /home/hduser/wordcount.jar --input ./README.txt
+--output  /home/hduser/output
+
+cd /usr/local/flink
+ 
+./bin/flink run /home/hduser/ssbdca/ssbd-ca2/flink-wordcount/wordcount-ca2-q5.jar --input /home/hduser/ssbdca/ssbd-ca2/flink-wordcount/ --output /home/hduser/ssbdca/ssbd-ca2/flink-wordcount/worcount-output
+
+
+
